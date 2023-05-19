@@ -1,0 +1,22 @@
+def count_words_and_vowels(sentence):
+    wordCount = 0
+    vowelCount = 0
+    charCount = 0
+
+    for char in sentence:
+        charCount += 1
+        if char.isalpha():
+            if char.lower() in 'aeiou':
+                vowelCount += 1
+        elif char == ' ':
+            wordCount += 1
+
+    if charCount > 0:
+        wordCount += 1  # Increment wordCount for the last word before the point
+
+    print("Number of words:", wordCount)
+    print("Number of vowels:", vowelCount)
+
+# Example usage:
+input_sentence = input("Enter a sentence: ")
+count_words_and_vowels(input_sentence)
